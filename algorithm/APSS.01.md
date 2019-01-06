@@ -13,7 +13,7 @@
 
    2. #### 공부 추천 장 번호
 
-      - ![](C:\SSAFY\work\algorithm\KakaoTalk_20190105_175936241.jpg)
+      - ![](.\KakaoTalk_20190105_175936241.jpg)
 
 2. ### 문제 해결 개관
 
