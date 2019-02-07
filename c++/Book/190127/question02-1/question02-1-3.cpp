@@ -1,7 +1,19 @@
 #include <iostream>
 
-// void SwapPointer(int *, int *;
-void SwapPointer(int *(&), int *(&));
+// 교재 코드
+void SwapPointer(int *(&pref1), int *(&pref2)){ // 얘는 내 코드와 의미하는 바가 같지 않나?
+    std::cout<<"pref1: "<<pref1<<std::endl;
+    std::cout<<"&pref1: "<<&pref1<<std::endl;
+    int *ptr = pref1;
+    // std::cout<<"ptr: "<<ptr<<std::endl;
+    // std::cout<<"*ptr: "<<*ptr<<std::endl;
+    pref1 = pref2;
+    pref2 = ptr;
+}
+
+// void SwapPointer(int &ptr1, int &ptr2){
+//     ptr1
+// }
 
 int main(void)
 {
@@ -10,6 +22,7 @@ int main(void)
     int num2=10;
     int *ptr2=&num2;
     SwapPointer(ptr1, ptr2);
+    std::cout<<"&num1: "<<&num1<<std::endl;
     std::cout<<"ptr1: "<<*ptr1<<std::endl;
     std::cout<<"ptr2: "<<*ptr2<<std::endl;
 
@@ -23,13 +36,4 @@ int main(void)
 //     num1 = temp;
 // }
 
-// 교재 코드
-void SwapPointer(int *(&pref1), int *(&pref2)){ // 얘는 내 코드와 의미하는 바가 같지 않나?
-    // std::cout<<"pref1: "<<pref1<<std::endl;
-    // std::cout<<"&pref1: "<<&pref1<<std::endl;
-    int *ptr = pref1;
-    // std::cout<<"ptr: "<<ptr<<std::endl;
-    // std::cout<<"*ptr: "<<*ptr<<std::endl;
-    pref1 = pref2;
-    pref2 = ptr;
-}
+
