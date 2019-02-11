@@ -8,9 +8,8 @@ typedef struct __Point
 
 Point& PntAdder(const Point &p1, const Point &p2){
     Point *sumptr = new Point;
-    sumptr -> xpos = (p1.xpos) + (p2.xpos);
-    sumptr -> ypos = (p1.ypos) + (p2.ypos);
-    return *sumptr;
+    sumptr -> 
+    
 }
 
 int main(void){
@@ -22,14 +21,10 @@ int main(void){
     p2 -> xpos = 3;
     p2 -> ypos = 4;
     
-    Point &sumptr = PntAdder(*p1, *p2);
+    PntAdder(*p1, *p2)
 
-
-    std::cout<<sumptr.xpos<<", "<<sumptr.ypos<<std::endl;
-
-    delete p1;
-    delete p2;
-    delete &sumptr;
+    std::cout<<p1 -> xpos<<std::endl;
+    // std::cout>>PntAdder()>>std::endl;
 
     return 0;
     }
