@@ -5,6 +5,13 @@
 using namespace std;
 
 int main(void){
-    string 
+    string input_string;
+    while(true){
+        getline(cin,input_string);
+        if(input_string==""){
+            break;
+        }
+        cout<<input_string<<endl;
+    }
     return 0;
 }
