@@ -1,4 +1,5 @@
 // Leetcode
+// 814. Binary Tree Pruning
 
 /**
  * Definition for a binary tree node.
@@ -13,20 +14,19 @@
  * @return {TreeNode}
  */
  var pruneTree = function(root) {
-    cutEmptyNode(root);
+    root = clearTree(root);
+    
     return root;
 };
 
-let cutEmptyNode = function(node) {
+let clearTree = function(node) {
     if (node === null) return null;
     
-
-    let left = cutEmptyNode(node.left);
-    let right = cutEmptyNode(node.right);
+    let left = clearTree(node.left);
+    let right = clearTree(node.right);
     
-    if (left === null && right === null && node.val == 0) {
-        console.log(`${node.val}`)
-    }
+    if (left === null && right === null && node.val === 0) return null;
     
+    node.left = left, node.right = right;
     return node;
 }
