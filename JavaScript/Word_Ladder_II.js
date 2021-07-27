@@ -58,12 +58,12 @@ let linkWord = function(dictionary) {
 let bfs = function(ret, dictionary, beginWord, endWord) {
     let que = [[beginWord]];
     let wordLength = 1001;
+    let set = new Set();
 
     while (que.length) {
         let now = que.shift();
-        const set = new Set(now);
         let lastNode = now[now.length - 1];
-
+        set.add(lastNode);
         
         if (lastNode === undefined) break;
         if (now.length <= wordLength && lastNode === endWord) {
@@ -75,8 +75,8 @@ let bfs = function(ret, dictionary, beginWord, endWord) {
         if (now.length >= wordLength) continue;
         
         for (node of dictionary[lastNode]) {
-           if (set.has(node)) continue;
-
+            if (set.has(node) === true) continue;
+            
             que.push([...now, node]);
         }
     }
