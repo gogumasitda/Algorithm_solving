@@ -10,16 +10,25 @@ function solution(n, lost, reserve) {
         spare[num] = 1;
     })
     
+    lost = lost.reduce((acc, num) => {
+        if (spare[num] === 1) {
+            answer++;
+            spare[num] = 0;
+        } else {
+            acc.push(num);
+        }
+        
+        return acc;
+    }, [])
+    
     lost.sort((a, b) => a - b);
+    
+    console.log(lost);
     
     lost.forEach((num) => {
         const pre = num - 1;
         const post = num + 1;
-        if (spare[num] === 1) {
-            spare[num] = 0;
-            answer++;
-        }
-        else if (spare[pre] === 1) {
+        if (spare[pre] === 1) {
             spare[pre] = 0;
             answer++;
         }
