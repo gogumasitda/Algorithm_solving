@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Book\4장\inefficientMaxSum.cpp">
+    <ClCompile Include="boggle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boggle.cpp">
+    <ClCompile Include="모래성.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
